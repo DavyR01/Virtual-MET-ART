@@ -1,0 +1,25 @@
+input::placeholder {
+  color: #908c8c;
+  font-style: italic;
+  font-family: "Playfaire Display", "serif";
+}
+
+.svg-arrow {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 3% bottom 45%;
+  background-size: auto 1em;
+  background-image: url("./media/down-arrow.png");
+}
+
+.svg-search {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: 83% 40%;
+  background-size: auto 1.3em;
+  background-image: url("./media/search.png");
+}
+
+.galery-shadow img {
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}

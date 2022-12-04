@@ -1,0 +1,10 @@
+.about-image {
+  background-size: 180%;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 640px) {
+  .about-image {
+    background-size: 100%;
+  }
+}

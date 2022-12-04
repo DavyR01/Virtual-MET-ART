@@ -1,0 +1,32 @@
+.fullscreen {
+  position: fixed;
+  overflow: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+  height: 100vh;
+  width: 100vw;
+  background: #23243c;
+}
+
+.svg-modal {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 5% bottom 95%;
+  background-size: auto 2.5em;
+  background-image: url("./media/close-white.png");
+}
+
+@media only screen and (max-width: 1240px) {
+  .svg-modal {
+    background-size: auto 2em;
+    background-position:right 5% bottom 97%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .svg-modal {
+    background-size: auto 1.5em;
+  }
+}

@@ -1,0 +1,170 @@
+.hidden {
+  display: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+body {
+  background-color: #23243c;
+}
+
+/* .hlCarousel h3 {
+} */
+
+.slider .itemImagesDiv:hover {
+  box-shadow: 0px 0px 10px 0px white;
+  transform: scale(1.05);
+  transition: transform 1s, box-shadow 1s, opacity 1s;
+}
+
+.hlMobile .itemImagesDiv:hover {
+  box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
+  transform: rotate(2deg) scale(1.04) translate(-10px);
+  transition: transform 1s, box-shadow 1s, opacity 1s;
+}
+
+/*********************** MEDIA QUERIES RESPONSIVE *********************/
+
+@media screen and (max-width: 640px) {
+  .hl-Title {
+    font-size: 60px;
+    padding-top: 60px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .hlMobile {
+    visibility: visible;
+    /*optionnel*/
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    text-align: center;
+  }
+
+  .hlListObjects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .hlObject1 {
+    text-align: center;
+  }
+
+  .hlPictures {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    padding: 30px;
+    max-width: 700px;
+  }
+
+  .hlDescription {
+    font-size: 20px;
+  }
+  .hlNameArtist {
+    padding-bottom: 20px;
+  }
+
+  .slider {
+    display: none;
+  }
+
+  .hlListObjects {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .hl-Title {
+    font-size: 100px;
+    padding-top: 100px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hlMobile {
+    display: none;
+  }
+
+  .hl-Title {
+    font-size: 6rem;
+    padding-top: .5em;
+  }
+
+  .hlListObjects {
+    display: none;
+  }
+  .slider {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right-arrow {
+    position: absolute;
+    top: 57%;
+    right: 3%;
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.3;
+  }
+  .left-arrow {
+    position: absolute;
+    top: 30%;
+    right: 3%;
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    z-index: 2;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.3;
+  }
+  .right-arrow:hover {
+    opacity: 1;
+  }
+  .left-arrow:hover {
+    opacity: 1;
+  }
+
+  .slide {
+    opacity: 0;
+    transition-duration: 0s ease;
+  }
+
+  .slide.active {
+    opacity: 1;
+    transition-duration: 2s;
+    transform: scale(1.07);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .right-arrow {
+    font-size: 4rem;
+    top: 56%;
+    right: 3%;
+  }
+
+  .left-arrow {
+    font-size: 4rem;
+    top: 30%;
+    right: 3%;
+  }
+
+  .slider .itemImagesDiv:hover {
+    transform: scale(1.05) translate(-20px);
+  }
+}
