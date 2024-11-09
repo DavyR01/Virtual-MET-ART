@@ -15,7 +15,8 @@
     "react-dom": "^18.0.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.2",
-    "react-spinners": "^0.13.6"
+    "react-spinners": "^0.13.6",
+    "template-fullstack": "file:.."
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
