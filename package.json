@@ -9,21 +9,21 @@
       "dev-front": "npm --prefix ./frontend run dev",
       "lint": "npm --prefix ./frontend run lint",
       "fix": "npm --prefix ./frontend run fix",
-      "delete": "rm -rf node_modules && cd frontend && rm -rf node_modules",
-      "update": "npx npm-check-updates -u"      
+      "delete": "rm -rf node_modules package-lock.json && cd frontend && rm -rf node_modules package-lock.json",
+      "update": "npx npm-check-updates --upgrade"
    },
    "keywords": [],
    "author": "Wild Code School",
    "license": "ISC",
    "devDependencies": {
-      "concurrently": "^7.0.0",
-      "husky": "^7.0.0"
+      "concurrently": "^9.1.0",
+      "husky": "^9.1.6"
    },
    "dependencies": {
-      "eslint": "^8.26.0",
-      "react-icons": "^4.6.0",
-      "react-router-dom": "^6.4.2",
-      "react-spinners": "^0.13.6"
+      "eslint": "^8.2.0",
+      "react-icons": "^5.3.0",
+      "react-router-dom": "^6.28.0",
+      "react-spinners": "^0.14.1"
    },
    "repository": {
       "type": "git",
