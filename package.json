@@ -1,36 +1,38 @@
 {
-   "name": "template-fullstack",
-   "version": "1.0.0",
-   "description": "This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School. It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.",
-   "main": "index.js",
-   "scripts": {
-      "setup": "npm i && husky install && npm --prefix ./frontend i",
-      "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev\"",
-      "dev-front": "npm --prefix ./frontend run dev",
-      "lint": "npm --prefix ./frontend run lint",
-      "fix": "npm --prefix ./frontend run fix",
-      "delete": "rm -rf node_modules package-lock.json && cd frontend && rm -rf node_modules package-lock.json",
-      "update": "npx npm-check-updates --upgrade"
-   },
-   "keywords": [],
-   "author": "Wild Code School",
-   "license": "ISC",
-   "devDependencies": {
-      "concurrently": "^9.1.0",
-      "husky": "^9.1.6"
-   },
-   "dependencies": {
-      "eslint": "^8.2.0",
-      "react-icons": "^5.3.0",
-      "react-router-dom": "^6.28.0",
-      "react-spinners": "^0.14.1"
-   },
-   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/WildCodeSchool/P2_404-Project-Not-Found_Lyon-React-Sept-2022.git"
-   },
-   "bugs": {
-      "url": "https://github.com/WildCodeSchool/P2_404-Project-Not-Found_Lyon-React-Sept-2022/issues"
-   },
-   "homepage": "https://github.com/WildCodeSchool/P2_404-Project-Not-Found_Lyon-React-Sept-2022#readme"
+  "name": "template-fullstack",
+  "version": "1.0.0",
+  "description": "This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School. It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "setup": "npm i && husky init && npm --prefix ./frontend i",
+    "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev\"",
+    "dev-front": "npm --prefix ./frontend run dev",
+    "test": "npm --prefix ./frontend run lint",
+    "fix": "npm --prefix ./frontend run fix",
+    "delete": "rm -rf node_modules package-lock.json && cd frontend && rm -rf node_modules package-lock.json",
+    "update": "npx npm-check-updates --upgrade",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "Wild Code School",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "husky": "^9.1.6"
+  },
+  "dependencies": {
+    "eslint": "^8.2.0",
+    "react-icons": "^5.3.0",
+    "react-router-dom": "^6.28.0",
+    "react-spinners": "^0.14.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WildCodeSchool/P2_404-Project-Not-Found_Lyon-React-Sept-2022.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WildCodeSchool/P2_404-Project-Not-Found_Lyon-React-Sept-2022/issues"
+  },
+  "homepage": "https://github.com/WildCodeSchool/P2_404-Project-Not-Found_Lyon-React-Sept-2022#readme"
 }
