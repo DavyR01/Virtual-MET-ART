@@ -14,6 +14,7 @@ Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants 
 ### Liste des commandes et signification
 
 - `setup` : Initialisation du frontend et du backend ainsi que des outils
+- `migrate` : Run the database migration script
 - `dev` : Démarrage des deux serveurs (frontend + backend) dans un même terminal
 - `dev-front` : Démarrage d'un serveur React pour le frontend
 - `dev-back` : Démarrage d'un serveur Express pour le backend
@@ -34,9 +35,9 @@ Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants 
 
 ### Reste à faire
 
-Prettier:
+<!-- Prettier:
 
-- corriger la config front/back pour qu'elle suive le même standard qu'ESLint
+- corriger la config front/back pour qu'elle suive le même standard qu'ESLint -->
 
 Testing:
 
