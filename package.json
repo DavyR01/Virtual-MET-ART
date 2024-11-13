@@ -9,7 +9,8 @@
       "dev-front": "npm --prefix ./frontend run dev",
       "lint": "npm --prefix ./frontend run lint",
       "fix": "npm --prefix ./frontend run fix",
-      "delete": "rm -rf node_modules && cd frontend && rm -rf node_modules"
+      "delete": "rm -rf node_modules && cd frontend && rm -rf node_modules",
+      "update": "npx npm-check-updates -u"      
    },
    "keywords": [],
    "author": "Wild Code School",
