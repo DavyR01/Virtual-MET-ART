@@ -140,7 +140,7 @@
   margin-right: 10px;
 }
 
-.hidden{
-    position: fixed;
-    transition: 0.3s linear;
+.hidden {
+  position: fixed;
+  transition: 0.3s linear;
 }

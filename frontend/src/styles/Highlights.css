@@ -16,13 +16,19 @@ body {
 .slider .itemImagesDiv:hover {
   box-shadow: 0px 0px 10px 0px white;
   transform: scale(1.05);
-  transition: transform 1s, box-shadow 1s, opacity 1s;
+  transition:
+    transform 1s,
+    box-shadow 1s,
+    opacity 1s;
 }
 
 .hlMobile .itemImagesDiv:hover {
   box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);
   transform: rotate(2deg) scale(1.04) translate(-10px);
-  transition: transform 1s, box-shadow 1s, opacity 1s;
+  transition:
+    transform 1s,
+    box-shadow 1s,
+    opacity 1s;
 }
 
 /*********************** MEDIA QUERIES RESPONSIVE *********************/
@@ -96,7 +102,7 @@ body {
 
   .hl-Title {
     font-size: 6rem;
-    padding-top: .5em;
+    padding-top: 0.5em;
   }
 
   .hlListObjects {
