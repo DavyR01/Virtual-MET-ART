@@ -9,7 +9,7 @@
     "setupProd": "npm i --omit=dev && husky init && npm --prefix ./frontend i --omit=dev",
     "build": "cd frontend/ && npm run build && cp -r dist ..",
     "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev\"",
-    "start": "npm --prefix ./frontend run start",
+    "start": "npm --prefix ./frontend run start-front",
     "dev-front": "npm --prefix ./frontend run dev",
     "test": "npm --prefix ./frontend run test",
     "fix": "npm --prefix ./frontend run fix",
