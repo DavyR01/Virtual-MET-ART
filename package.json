@@ -3,27 +3,34 @@
   "version": "1.0.0",
   "description": "This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School. It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "setup": "npm i && husky install && npm --prefix ./frontend i && npm --prefix ./backend i",
-    "migrate": "cd backend/ && node migrate.js && cd ..",
-    "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev\" \"npm --prefix ./backend run dev\"",
+    "setup": "npm i && husky init && npm --prefix ./frontend i",
+    "setupProd": "npm i --omit=dev && husky init && npm --prefix ./frontend i --omit=dev",
+    "build": "cd frontend/ && npm run build && cp -r dist ..",
+    "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev\"",
+    "start": "npm --prefix ./frontend run start-front",
     "dev-front": "npm --prefix ./frontend run dev",
-    "dev-back": "npm --prefix ./backend run dev",
-    "lint": "npm --prefix ./frontend run lint && npm --prefix ./backend run lint",
-    "fix": "npm --prefix ./frontend run fix && npm --prefix ./backend run fix"
+    "test": "npm --prefix ./frontend run test",
+    "fix": "npm --prefix ./frontend run fix",
+    "delete": "rm -rf node_modules package-lock.json && cd frontend && rm -rf node_modules package-lock.json",
+    "update": "npx npm-check-updates --upgrade",
+    "update2": "ncu -u",
+    "prepare": "husky",
+    "preview": "npm --prefix ./frontend run preview"
   },
   "keywords": [],
   "author": "Wild Code School",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^7.0.0",
-    "husky": "^7.0.0"
+    "concurrently": "^9.1.0",
+    "husky": "^9.1.6"
   },
   "dependencies": {
-    "eslint": "^8.26.0",
-    "react-icons": "^4.6.0",
-    "react-router-dom": "^6.4.2",
-    "react-spinners": "^0.13.6"
+    "eslint": "^8.2.0",
+    "react-icons": "^5.3.0",
+    "react-router-dom": "^6.28.0",
+    "react-spinners": "^0.14.1"
   },
   "repository": {
     "type": "git",

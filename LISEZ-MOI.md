@@ -14,11 +14,12 @@ Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants 
 ### Liste des commandes et signification
 
 - `setup` : Initialisation du frontend et du backend ainsi que des outils
+- `migrate` : Run the database migration script
 - `dev` : Démarrage des deux serveurs (frontend + backend) dans un même terminal
 - `dev-front` : Démarrage d'un serveur React pour le frontend
 - `dev-back` : Démarrage d'un serveur Express pour le backend
-- `lint` : Exécute des outils de validation de code (sera exécutée automatiquement à chaque _commit_)
-- `fix` : Fixe les erreurs de formatage (à lancer si `lint` ne passe pas)
+- `test` : Exécute des outils de validation de code avec un linter (sera exécutée automatiquement à chaque _commit_)
+- `fix` : Fixe les erreurs de formatage (à lancer si `test` ne passe pas)
 
 ## Pour plus d'informations
 
@@ -32,18 +33,21 @@ Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants 
 - _Standard Airbnb_ : L'un des "standards" les plus connus, même s'il n'est pas officiellement lié à ES/JS
 - _Nodemon_ : Outil permettant de relancer un serveur à chaque fois qu'un des fichiers est modifié
 
-### Reste à faire
 
-Prettier:
 
-- corriger la config front/back pour qu'elle suive le même standard qu'ESLint
 
-Testing:
 
-- ajouter des tests unitaires sur le front et le back, avec les commandes associées
 
-Vérifications:
 
-- s'assurer que les principaux outils utilisés lors de la formation sont compatibles avec ce template
-- deploiements ? Compatible avec Netlify/Vercel/Heroku ?
-- fonctionnement avec yarn/pnpm
+
+
+
+
+
+
+
+    "start": "serve -s dist -l $PORT",
+    "start-front": "vite preview --host 0.0.0.0 --port $PORT",
+
+
+
