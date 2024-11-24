@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "setup": "npm i && husky init && npm --prefix ./frontend i",
-    "build": "cd frontend/ && npm run build",
+    "build": "cd frontend/ && npm run build && cp -r dist ..",
     "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev\"",
     "dev-front": "npm --prefix ./frontend run dev",
     "test": "npm --prefix ./frontend run test",
