@@ -1,21 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import downArrow from "../../media/down-arrow.png";
+import homeBackground from "../../media/home-background-image.jpg";
 
 export default function Home() {
   return (
     <div>
-      <div className="bg-[url('./media/home-background-image.jpg')] bg-cover bg-right h-screen flex flex-col items-center lg:bg-center ">
+      <div
+        className="bg-cover bg-right h-screen flex flex-col items-center lg:bg-center "
+        style={{ backgroundImage: `url(${homeBackground})` }}
+      >
         <h1 className="text-7xl text-background text-right drop-shadow-xl pt-20 pr-64 self-end w-16 md:w-24 lg:text-8xl lg:w-96">
           Virtual Met'Art
         </h1>
         {/* scroll down arrow */}
         <div className=" w-14 h-16 mt-auto">
           <a href="#home-text">
-            <img
-              className="down-arrow"
-              src="./media/down-arrow.png"
-              alt="Scroll"
-            />
+            <img className="down-arrow" src={downArrow} alt="Scroll" />
           </a>
         </div>
       </div>

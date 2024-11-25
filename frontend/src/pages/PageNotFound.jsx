@@ -1,4 +1,5 @@
 import React from "react";
+import pageNotFound from "../../media/page-not-found.jpg";
 
 function PageNotFound() {
   return (
@@ -11,7 +12,7 @@ function PageNotFound() {
       </h2>
       <img
         className="px-6 md:px-0 w-96 lg:w-5/12"
-        src="./media/page-not-found.jpg"
+        src={pageNotFound}
         alt="Page not found"
       />
     </div>

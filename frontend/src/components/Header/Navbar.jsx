@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import logoVirtual from "../../assets/logo-Virtual.svg";
 import "./NavBar.css";
 
 function Navbar() {
@@ -30,11 +31,7 @@ function Navbar() {
     >
       <div className={`${showLogo && "hidden"}`}>
         <Link to="/">
-          <img
-            className="logo"
-            src="../src/assets/logo-Virtual.svg"
-            alt="logo"
-          />
+          <img className="logo" src={logoVirtual} alt="logo" />
         </Link>
       </div>
       <ul className="navBarLinks">

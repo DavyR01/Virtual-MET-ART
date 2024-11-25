@@ -15,7 +15,7 @@
   background-repeat: no-repeat;
   background-position: right 5% bottom 95%;
   background-size: auto 2.5em;
-  background-image: url("./media/close-white.png");
+  background-image: url("@media/close-white.png");
 }
 
 @media only screen and (max-width: 1240px) {

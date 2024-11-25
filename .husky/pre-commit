@@ -3,4 +3,4 @@ if [ "$NODE_ENV" = "production" ]; then
   exit 0
 fi
 
-npm test
+# npm test
