@@ -4,7 +4,7 @@ import "../styles/About.css";
 function About() {
   return (
     <div className="about-bg bg-inherit overflow-auto">
-      <div className="about-image bg-[url('./media/about-background.jpg')] h-[90vh] bg-cover bg-center flex flex-wrap justify-start sm:justify-center">
+      <div className="about-image bg-[url('@media/about-background.jpg')] h-[90vh] bg-cover bg-center flex flex-wrap justify-start sm:justify-center">
         <div className="about-title-div ">
           <h1 className="page-title text-white text-5xl sm:text-7xl md:text-8xl mt-36">
             About

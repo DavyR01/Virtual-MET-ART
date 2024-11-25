@@ -9,7 +9,7 @@ input::placeholder {
   background-repeat: no-repeat;
   background-position: right 3% bottom 45%;
   background-size: auto 1em;
-  background-image: url("./media/down-arrow.png");
+  background-image: url("@media/down-arrow.png");
 }
 
 .svg-search {
@@ -17,7 +17,7 @@ input::placeholder {
   background-repeat: no-repeat;
   background-position: 83% 40%;
   background-size: auto 1.3em;
-  background-image: url("./media/search.png");
+  background-image: url("@media/search.png");
 }
 
 .galery-shadow img {

@@ -1,4 +1,7 @@
 import React from "react";
+import facebook from "../../../media/socials/facebook.png";
+import instagram from "../../../media/socials/instagram.png";
+import youtube from "../../../media/socials/youtube.png";
 
 function Footer() {
   return (
@@ -14,21 +17,21 @@ function Footer() {
       <div className="footer-socials text-white w-1/3 sm:w-1/5 xl:w-52 mr-2 flex items-center justify-between">
         <a href="https://www.facebook.com/metmuseum">
           <img
-            src="../../media/socials/facebook.png"
+            src={facebook}
             className="footer-social-logo w-7 h-7"
             alt="facebook logo"
           />
         </a>
         <a href="https://www.youtube.com/user/metmuseum">
           <img
-            src="../../media/socials/youtube.png"
+            src={youtube}
             className="footer-social-logo w-7 h-7 mt-2"
             alt="youtube logo"
           />
         </a>
         <a href="https://www.instagram.com/metmuseum/">
           <img
-            src="../../media/socials/instagram.png"
+            src={instagram}
             className="footer-social-logo w-7 h-7"
             alt="instagram logo"
           />

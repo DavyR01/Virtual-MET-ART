@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import logoVirtual from "../../assets/logo-Virtual.svg";
+import logoVirtual from "../../../public/logo-Virtual.svg";
 import "./NavBar.css";
 
 function Navbar() {
