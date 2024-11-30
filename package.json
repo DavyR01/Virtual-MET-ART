@@ -10,6 +10,7 @@
     "build": "cd frontend/ && npm run build",
     "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev\"",
     "start": "npm --prefix ./frontend run start-front",
+    "start2": "npm --prefix ./frontend run start-front2",
     "dev-front": "npm --prefix ./frontend run dev",
     "test": "npm --prefix ./frontend run test",
     "fix": "npm --prefix ./frontend run fix",

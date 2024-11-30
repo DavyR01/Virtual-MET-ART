@@ -7,6 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "start-front": "serve -s dist -l $PORT",
+    "start-front2": "vite --port $PORT",
     "test": "echo '----- Checking Frontend...' && prettier --debug-check . && eslint --ext .jsx . && echo '----- Done!'",
     "fix": "prettier --write . && eslint --fix --ext .jsx ."
   },
