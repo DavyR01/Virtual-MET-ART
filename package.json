@@ -7,6 +7,7 @@
   "scripts": {
     "setup": "npm i && husky init && npm --prefix ./frontend i",
     "setupProd": "npm i --omit=dev && husky init && npm --prefix ./frontend i --omit=dev",
+    "setupWithoutHusky": "npm i --omit=dev && npm --prefix ./frontend i --omit=dev",
     "build": "cd frontend/ && npm run build",
     "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev\"",
     "start": "npm --prefix ./frontend run start-front",
@@ -17,7 +18,6 @@
     "delete": "rm -rf node_modules package-lock.json && cd frontend && rm -rf node_modules package-lock.json",
     "update": "npx npm-check-updates --upgrade",
     "update2": "ncu -u",
-    "prepare": "husky",
     "preview": "npm --prefix ./frontend run preview"
   },
   "keywords": [],

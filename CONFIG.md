@@ -4,9 +4,12 @@
   "start-front": "vite preview --host 0.0.0.0 --port $PORT",
 
 ## Simulate production environment to serve the app from folder dist
-1) `npm run build`
 
-2) 2 options :
+1) `npm run setupWithoutHusky` to download packages node_modules without husky.
+
+2) `npm run build` 
+
+3) 2 options :
 - Launch `npm run preview` : Command specific to Vite to test the app after build.
 Run a simulation production app Vite with the folder dist in current folder where the command is carried out. No HMR. Used to see behavior once app deployed.
 
