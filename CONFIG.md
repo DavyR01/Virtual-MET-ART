@@ -5,11 +5,9 @@
 
 ## Simulate production environment to serve the app from folder dist
 
-1) `npm run setupWithoutHusky` to download packages node_modules without husky.
+1) `npm run setupProd2` to download packages node_modules without husky, build frontend with dist folder and delete after build devDependencies.
 
-2) `npm run build` 
-
-3) 2 options :
+2) 2 options :
 - Launch `npm run preview` : Command specific to Vite to test the app after build.
 Run a simulation production app Vite with the folder dist in current folder where the command is carried out. No HMR. Used to see behavior once app deployed.
 
