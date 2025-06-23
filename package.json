@@ -7,7 +7,8 @@
   "scripts": {
     "setup": "npm i && husky init && npm --prefix ./frontend i",
     "setupProd": "npm i --omit=dev && husky init && npm --prefix ./frontend i --omit=dev",
-    "setupProd2": "npm ci && npm --prefix ./frontend ci && npm --prefix ./frontend run build && npm prune --omit=dev && npm --prefix ./frontend prune --omit=dev",
+    "setupProd2": "npm i && npm --prefix ./frontend i && npm --prefix ./frontend run build",
+    "clean:prod": "npm prune --omit=dev && npm --prefix ./frontend prune --omit=dev",
     "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev\"",
     "start": "npm --prefix ./frontend run start-front",
     "start2": "npm --prefix ./frontend run start-front2",
