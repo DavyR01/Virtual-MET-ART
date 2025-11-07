@@ -34,7 +34,6 @@ function Filters({
 
   const clickClearFilters = () => {
     clearFilters();
-    window.location.reload(true); // Last ressource solution: refreshes the page, clearing everything
   };
 
   return (
