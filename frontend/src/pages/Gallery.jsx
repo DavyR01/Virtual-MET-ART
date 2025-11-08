@@ -10,21 +10,43 @@ function Gallery() {
   const [searchIdDepartment, setSearchIdDepartment] = useState();
   const [search, setSearch] = useState(""); // word or query added to the input search bar
   const [isProcessing, setIsProcessing] = useState(false); // state to know when display the loader
+  const [isFiltersCleared, setIsFiltersCleared] = useState(false);
 
   useEffect(() => {
-    setIsProcessing(true); // active the loader
-    fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true&q=gogh`
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        setIds(result.objectIDs || []);
-        setIsProcessing(false); // disable loader after the fetch
-      })
-      .catch((err) => console.error(err));
+    loadDefaultArtworks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const loadDefaultArtworks = (showLoader = true) => {
+    if (showLoader) {
+      setIsProcessing(true);
+    }
+    fetch(
+      `https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true&q=art`
+    )
+      .then((response) => {
+        if (!response.ok) {
+          // throw new Error("Network response was not ok");
+          return { objectIDs: [] };
+        }
+        return response.json();
+      })
+      .then((result) => {
+        setIds(result.objectIDs || []);
+        setIsProcessing(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching artworks:", err);
+        setIds([]);
+      });
+    // .finally(() => {
+    //   setIsProcessing(false);
+    // });
+  };
+
   const getSearchIds = () => {
+    setIsFiltersCleared(false);
+
     if (searchIdDepartment && search) {
       // search if a department has been chosen
       setIsProcessing(true); // active the loader
@@ -56,16 +78,9 @@ function Gallery() {
     setSearch("");
     setSearchIdDepartment(0);
     setIds([]);
+    // loadDefaultArtworks(false);
+    setIsFiltersCleared(true);
     setIsProcessing(false);
-    fetch(
-      `https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true&q=gogh`
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        setIds(result.objectIDs || []);
-        setIsProcessing(false); // disable loader after the fetch
-      })
-      .catch((err) => console.error(err));
   };
 
   return (
@@ -90,7 +105,13 @@ function Gallery() {
           <CircleLoader color="#ECB365" size={300} />{" "}
         </div>
       ) : (
-        <Results ids={ids} />
+        <Results
+          ids={ids}
+          clearFilters={clearFilters}
+          isFiltersCleared={isFiltersCleared}
+          onResultsRendered={() => setIsFiltersCleared(false)}
+          i
+        />
       )}
     </div>
   );

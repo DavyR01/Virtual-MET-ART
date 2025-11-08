@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Item from "./Item";
 
-function Results({ ids }) {
+function Results({ ...props }) {
+  const { ids, clearFilters, isFiltersCleared, onResultsRendered } = props;
   const [idsToShow, setIdsToShow] = useState([]); // temporary list, creating a limited amount of ID's to show related to the limit
   const [page, setPage] = useState(1);
   const [limit] = useState(10); // amount of Item components we want mounted per page
@@ -23,6 +24,12 @@ function Results({ ids }) {
     if (!isMount.current) isMount.current = true;
     else setShowIdsWithPagination();
   }, [page]);
+
+  // useEffect(() => {
+  //   if (isFiltersCleared && onResultsRendered) {
+  //     onResultsRendered();
+  //   }
+  // }, [isFiltersCleared, onResultsRendered]);
 
   return ids.length > 0 ? ( // Show item components and "Next" button only if there's been a successful research
     <div className="resultsPage">
@@ -55,14 +62,26 @@ function Results({ ids }) {
       </div>
     </div>
   ) : (
-    // if the research has not given any results, show this message and hide "Next" button
     <div className="flex flex-col items-center p-4">
-      <h1 className="text-white font-bold text-center text-5xl p-2">
-        No results were found
-      </h1>
-      <h2 className="text-white italic text-2xl p-2">
-        Try a different keyword
-      </h2>
+      {isFiltersCleared ? (
+        <>
+          <h1 className="text-white font-bold text-center text-5xl p-2">
+            Filters canceled
+          </h1>
+          <h2 className="text-white italic text-2xl p-2">
+            Search for your favorite works !
+          </h2>
+        </>
+      ) : (
+        <>
+          <h1 className="text-white font-bold text-center text-5xl p-2">
+            No results were found
+          </h1>
+          <h2 className="text-white italic text-2xl p-2">
+            Try a different keyword
+          </h2>
+        </>
+      )}
     </div>
   );
 }
