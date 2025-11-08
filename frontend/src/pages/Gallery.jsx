@@ -54,8 +54,9 @@ function Gallery() {
 
   const clearFilters = () => {
     setSearch("");
-    setSearchIdDepartment(null);
-    setIsProcessing(true); // active the loader
+    setSearchIdDepartment(0);
+    setIds([]);
+    setIsProcessing(false);
     fetch(
       `https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true&q=gogh`
     )

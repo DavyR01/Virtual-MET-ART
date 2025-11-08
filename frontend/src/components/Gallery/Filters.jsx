@@ -21,7 +21,7 @@ function Filters({
   }, []);
 
   useEffect(() => {
-    if (searchIdDepartment > 0)
+    if (searchIdDepartment > 0) {
       fetch(
         `https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=${searchIdDepartment}`
       )
@@ -30,6 +30,7 @@ function Filters({
           setIds(result.objectIDs);
         })
         .catch((err) => console.error(err));
+    }
   }, [searchIdDepartment]);
 
   const clickClearFilters = () => {
