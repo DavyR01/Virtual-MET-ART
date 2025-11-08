@@ -25,9 +25,12 @@ function Gallery() {
       `https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true&q=art`
     )
       .then((response) => {
-        if (!response.ok) {
+        if (response.status === 404) {
           // throw new Error("Network response was not ok");
           return { objectIDs: [] };
+        }
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
       })
@@ -44,34 +47,38 @@ function Gallery() {
     // });
   };
 
-  const getSearchIds = () => {
-    setIsFiltersCleared(false);
+const getSearchIds = () => {
+  setIsFiltersCleared(false);
+  setIsProcessing(true);
 
-    if (searchIdDepartment && search) {
-      // search if a department has been chosen
-      setIsProcessing(true); // active the loader
-      fetch(
-        `https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true&departmentId=${searchIdDepartment}&q=${search}`
-      )
-        .then((response) => response.json())
-        .then((result) => {
-          setIds(result.objectIDs || []);
-          setIsProcessing(false); // disable loader after the fetch
-        })
-        .catch((err) => console.error(err));
-    } else if (search) {
-      // search with a simple query, no department
-      setIsProcessing(true); // active the loader
-      fetch(
-        `https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true&q=${search}`
-      )
-        .then((response) => response.json())
-        .then((result) => {
-          setIds(result.objectIDs || []);
-          setIsProcessing(false); // disable loader after the fetch
-        })
-        .catch((err) => console.error(err));
-    }
+  let url = `https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&hasImages=true`;
+
+  if (searchIdDepartment && search) {
+    // Recherche avec département et terme de recherche
+    url += `&departmentId=${searchIdDepartment}&q=${encodeURIComponent(search)}`;
+  } else if (search) {
+    // Recherche simple avec uniquement un terme
+    url += `&q=${encodeURIComponent(search)}`;
+  } else {
+    // Si pas de recherche, on charge les œuvres par défaut
+    return loadDefaultArtworks();
+  }
+
+    fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        // Si la réponse n'est pas OK, on retourne un tableau vide
+        return { objectIDs: [] };
+      }
+      return response.json();
+    })
+    .then((result) => {
+      setIds(result.objectIDs || []);
+    })
+    .catch((err) => {
+      console.error("Erreur lors de la recherche:", err);
+      setIds([]); // En cas d'erreur, on vide les résultats
+    })
   };
 
   const clearFilters = () => {
