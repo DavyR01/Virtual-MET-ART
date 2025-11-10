@@ -39,7 +39,7 @@ export default function Home() {
           </p>
         </div>
         {/* gallery button */}
-        <Link to="gallery">
+        <Link to="/gallery">
           <button
             className="bg-gold opacity-90 h-16 w-56 px-4 rounded-md mt-10 md:w-64 md:h-20 lg:w-80 lg:h-20 lg:mt-10"
             type="button"

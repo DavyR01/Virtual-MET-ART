@@ -23,9 +23,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="gallery" element={<Gallery />} />
-        <Route path="highlights" element={<Highlights />} />
-        <Route path="about" element={<About />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/highlights" element={<Highlights />} />
+        <Route path="/about" element={<About />} />
         {/* only match this when no other routes match */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>

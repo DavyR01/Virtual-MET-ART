@@ -41,21 +41,21 @@ function Navbar() {
           </Link>
         </li>
         <li className="navBarItem slideInDown-2">
-          <Link className="navBarLink" to="gallery" onClick={handleShowLinks}>
+          <Link className="navBarLink" to="/gallery" onClick={handleShowLinks}>
             Gallery
           </Link>
         </li>
         <li className="navBarItem slideInDown-3">
           <Link
             className="navBarLink"
-            to="highlights"
+            to="/highlights"
             onClick={handleShowLinks}
           >
             Highlights
           </Link>
         </li>
         <li className="navBarItem slideInDown-4">
-          <Link className="navBarLink" to="about" onClick={handleShowLinks}>
+          <Link className="navBarLink" to="/about" onClick={handleShowLinks}>
             About
           </Link>
         </li>
