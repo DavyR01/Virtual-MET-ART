@@ -74,11 +74,13 @@ const getSearchIds = () => {
     })
     .then((result) => {
       setIds(result.objectIDs || []);
+       setIsProcessing(false);
     })
     .catch((err) => {
       console.error("Erreur lors de la recherche:", err);
       setIds([]); // En cas d'erreur, on vide les résultats
-    })
+      setIsProcessing(false);
+    });
   };
 
   const clearFilters = () => {
